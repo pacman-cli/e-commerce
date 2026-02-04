@@ -1,19 +1,20 @@
 package com.ecommerce.order.api.common;
 
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcRegistrations;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 /**
  * Web Configuration for API Versioning
- * 
+ *
  * Registers the custom request mapping handler that supports API versioning.
+ * Uses WebMvcRegistrations to avoid disabling Spring Boot's auto-configuration.
  */
 @Configuration
-public class ApiVersionWebConfig extends WebMvcConfigurationSupport {
-    
+public class ApiVersionWebConfig implements WebMvcRegistrations {
+
     @Override
-    protected RequestMappingHandlerMapping createRequestMappingHandlerMapping() {
+    public RequestMappingHandlerMapping getRequestMappingHandlerMapping() {
         return new ApiVersionRequestMappingHandler();
     }
 }

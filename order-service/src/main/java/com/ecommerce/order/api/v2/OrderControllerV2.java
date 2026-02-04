@@ -45,7 +45,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @ApiVersion("v2")
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/api/v2/orders")
 @RequiredArgsConstructor
 @Slf4j
 public class OrderControllerV2 {
@@ -65,7 +65,8 @@ public class OrderControllerV2 {
         log.info("v2: Async order creation for user {}", userId);
 
         // Start async processing
-        CompletableFuture<OrderResponse> future = orderService.createOrder(
+        // Start async processing
+        orderService.createOrder(
                 UUID.fromString(userId),
                 userEmail,
                 request); // for async processing we use CompletableFuture
