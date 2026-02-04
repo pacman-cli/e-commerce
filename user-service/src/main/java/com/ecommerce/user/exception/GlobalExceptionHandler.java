@@ -1,4 +1,4 @@
-package com.ecommerce.payment.exception;
+package com.ecommerce.user.exception;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ import com.ecommerce.shared.dto.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Global exception handler for Payment Service.
+ * Global exception handler for User Service.
  *
  * Provides standardized error responses across all API endpoints.
  * Ensures no stack traces leak to clients while maintaining detailed
@@ -27,11 +27,25 @@ import lombok.extern.slf4j.Slf4j;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(PaymentNotFoundException.class)
+    @ExceptionHandler(UserNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<ErrorResponse> handlePaymentNotFound(PaymentNotFoundException ex) {
-        log.warn("Payment not found: {}", ex.getMessage());
-        return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage(), "PAYMENT_NOT_FOUND");
+    public ResponseEntity<ErrorResponse> handleUserNotFound(UserNotFoundException ex) {
+        log.warn("User not found: {}", ex.getMessage());
+        return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage(), "USER_NOT_FOUND");
+    }
+
+    @ExceptionHandler(UserAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseEntity<ErrorResponse> handleUserAlreadyExists(UserAlreadyExistsException ex) {
+        log.warn("User already exists: {}", ex.getMessage());
+        return buildErrorResponse(HttpStatus.CONFLICT, ex.getMessage(), "USER_ALREADY_EXISTS");
+    }
+
+    @ExceptionHandler(InvalidCredentialsException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ResponseEntity<ErrorResponse> handleInvalidCredentials(InvalidCredentialsException ex) {
+        log.warn("Invalid credentials: {}", ex.getMessage());
+        return buildErrorResponse(HttpStatus.UNAUTHORIZED, ex.getMessage(), "INVALID_CREDENTIALS");
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
@@ -83,5 +97,4 @@ public class GlobalExceptionHandler {
                 .build();
         return ResponseEntity.status(status).body(response);
     }
-
 }

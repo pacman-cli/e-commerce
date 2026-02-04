@@ -1,4 +1,4 @@
-package com.ecommerce.payment.config;
+package com.ecommerce.user.config;
 
 import java.util.Map;
 
@@ -6,7 +6,7 @@ import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.ecommerce.payment.exception.ValidationErrorResponse;
+import com.ecommerce.user.exception.ValidationErrorResponse;
 
 import io.swagger.v3.core.converter.ModelConverters;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -17,11 +17,11 @@ import io.swagger.v3.oas.models.media.Schema;
 public class OpenApiConfig {
 
         @Bean
-        public OpenAPI paymentServiceOpenAPI() {
+        public OpenAPI userServiceOpenAPI() {
                 return new OpenAPI()
                                 .info(new Info()
-                                                .title("Payment Service API")
-                                                .description("Handles payment processing and status checks.")
+                                                .title("User Service API")
+                                                .description("Manages user registration, authentication, and profiles.")
                                                 .version("1.0.0"));
         }
 
