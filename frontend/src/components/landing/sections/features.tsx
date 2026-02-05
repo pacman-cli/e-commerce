@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import { Activity, Cpu, Globe, Layers, LucideIcon, ShieldCheck, Zap } from "lucide-react"
 
 // Premium easing
-const easeOutSoft = [0.16, 1, 0.3, 1]
+const easeOutSoft: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 interface FeatureItemProps {
   title: string

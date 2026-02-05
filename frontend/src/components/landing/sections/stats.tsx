@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 
 // Premium easing
-const easeOutSoft = [0.16, 1, 0.3, 1]
+const easeOutSoft: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 interface StatItemProps {
   value: number

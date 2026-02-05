@@ -9,7 +9,7 @@ import { ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 
 // Premium easing
-const easeOutSoft = [0.16, 1, 0.3, 1]
+const easeOutSoft: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 export function CTA() {
   return (
