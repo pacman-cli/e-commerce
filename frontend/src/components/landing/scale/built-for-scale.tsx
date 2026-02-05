@@ -6,7 +6,7 @@ import { Database, Globe, Layers, LucideIcon, Server, ShoppingBag, Users } from 
 import { useRef } from "react"
 
 // Premium easing
-const easeOutSoft = [0.16, 1, 0.3, 1]
+const easeOutSoft: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 interface ScaleStepProps {
   icon: LucideIcon
