@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "cfafb142-ea80-40cf-9d8a-ef9d89635924",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/candidate.json",
+  "output": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+  "specification": {
+    "sha256": "5d856eefc5c2d75029cafe753af19fec4bc04b8fbb5fe6eeedf63a330bd3b3c5",
+    "bytes": 14873
+  },
+  "artifact": {
+    "sha256": "b1048be25a947db15d6c92a16040e4dfbc8e9eb752323389660a22737ae19d1c",
+    "bytes": 798142
+  }
+}

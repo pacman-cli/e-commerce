@@ -1,0 +1,1252 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-25T23:00:58.932Z",
+  "specification": {
+    "path": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/candidate.json",
+    "sha256": "5d856eefc5c2d75029cafe753af19fec4bc04b8fbb5fe6eeedf63a330bd3b3c5",
+    "bytes": 14873
+  },
+  "artifact": {
+    "path": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+    "sha256": "b1048be25a947db15d6c92a16040e4dfbc8e9eb752323389660a22737ae19d1c",
+    "bytes": 798142
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "/opt/homebrew/Cellar/node/26.12.1/bin/node",
+        "/Users/md.ashikurrahmanpuspo/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/candidate.json",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "5d856eefc5c2d75029cafe753af19fec4bc04b8fbb5fe6eeedf63a330bd3b3c5",
+          "bytes": 14873
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 877,
+      "command": [
+        "/opt/homebrew/Cellar/node/26.12.1/bin/node",
+        "/Users/md.ashikurrahmanpuspo/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/candidate.json",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "cfafb142-ea80-40cf-9d8a-ef9d89635924",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/candidate.json",
+        "output": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+        "specification": {
+          "sha256": "5d856eefc5c2d75029cafe753af19fec4bc04b8fbb5fe6eeedf63a330bd3b3c5",
+          "bytes": 14873
+        },
+        "artifact": {
+          "sha256": "b1048be25a947db15d6c92a16040e4dfbc8e9eb752323389660a22737ae19d1c",
+          "bytes": 798142
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "evidence": {
+          "verified": true,
+          "repository": "https://github.com/pacman-cli/e-commerce",
+          "revision": "459977c9dc9d10a02742a2ef0e9ad181ef6c1981",
+          "references": 39
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 237,
+      "command": [
+        "/opt/homebrew/Cellar/node/26.12.1/bin/node",
+        "/Users/md.ashikurrahmanpuspo/.agents/skills/archify/bin/archify.mjs",
+        "check",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+        "artifact": {
+          "sha256": "b1048be25a947db15d6c92a16040e4dfbc8e9eb752323389660a22737ae19d1c",
+          "bytes": 798142
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 7,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 6,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.102981366459627,
+            "maxBends": 4,
+            "routesOverSuggestedBends": 7,
+            "maxStretch": 2.574,
+            "routesOverSuggestedStretch": 1,
+            "minSegmentPx": 10,
+            "minInteriorSegmentPx": 16,
+            "shortSegmentCount": 2,
+            "shortEndpointSegmentCount": 2,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [
+              {
+                "left": {
+                  "id": "gateway-order",
+                  "from": "gateway",
+                  "to": "order",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "right": {
+                  "id": "product-db-write",
+                  "from": "product",
+                  "to": "product-db",
+                  "label": "JPA catalog persistence",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "point": [
+                  660,
+                  396
+                ]
+              },
+              {
+                "left": {
+                  "id": "payment-db-write",
+                  "from": "payment",
+                  "to": "payment-db",
+                  "label": "JPA payment persistence",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "right": {
+                  "id": "inventory-redis",
+                  "from": "inventory",
+                  "to": "redis",
+                  "label": "Redisson lock",
+                  "collectionIndex": 11,
+                  "artifactIndex": 12
+                },
+                "point": [
+                  1170,
+                  417
+                ]
+              },
+              {
+                "left": {
+                  "id": "inventory-redis",
+                  "from": "inventory",
+                  "to": "redis",
+                  "label": "Redisson lock",
+                  "collectionIndex": 11,
+                  "artifactIndex": 12
+                },
+                "right": {
+                  "id": "order-inventory-missing",
+                  "from": "order",
+                  "to": "inventory",
+                  "label": "missing checkout integration",
+                  "collectionIndex": 18,
+                  "artifactIndex": 19
+                },
+                "point": [
+                  910,
+                  417
+                ],
+                "sharedNode": "inventory"
+              },
+              {
+                "left": {
+                  "id": "user-kafka",
+                  "from": "user",
+                  "to": "kafka",
+                  "label": "outbox → user-events",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "right": {
+                  "id": "payment-kafka",
+                  "from": "payment",
+                  "to": "kafka",
+                  "label": "payment-events",
+                  "collectionIndex": 16,
+                  "artifactIndex": 17
+                },
+                "point": [
+                  1057,
+                  142
+                ],
+                "sharedNode": "kafka"
+              },
+              {
+                "left": {
+                  "id": "order-kafka",
+                  "from": "order",
+                  "to": "kafka",
+                  "label": "outbox → order-events",
+                  "collectionIndex": 13,
+                  "artifactIndex": 14
+                },
+                "right": {
+                  "id": "payment-kafka",
+                  "from": "payment",
+                  "to": "kafka",
+                  "label": "payment-events",
+                  "collectionIndex": 16,
+                  "artifactIndex": 17
+                },
+                "point": [
+                  1057,
+                  170
+                ],
+                "sharedNode": "kafka"
+              },
+              {
+                "left": {
+                  "id": "order-kafka",
+                  "from": "order",
+                  "to": "kafka",
+                  "label": "outbox → order-events",
+                  "collectionIndex": 13,
+                  "artifactIndex": 14
+                },
+                "right": {
+                  "id": "kafka-order",
+                  "from": "kafka",
+                  "to": "order",
+                  "label": "payment-events",
+                  "collectionIndex": 17,
+                  "artifactIndex": 18
+                },
+                "point": [
+                  1040,
+                  331.27272727272725
+                ],
+                "sharedNode": "order"
+              },
+              {
+                "left": {
+                  "id": "kafka-payment",
+                  "from": "kafka",
+                  "to": "payment",
+                  "label": "order-events",
+                  "collectionIndex": 14,
+                  "artifactIndex": 15
+                },
+                "right": {
+                  "id": "payment-kafka",
+                  "from": "payment",
+                  "to": "kafka",
+                  "label": "payment-events",
+                  "collectionIndex": 16,
+                  "artifactIndex": 17
+                },
+                "point": [
+                  1177,
+                  276
+                ],
+                "sharedNode": "kafka"
+              }
+            ],
+            "crowdedSides": [
+              {
+                "node": "gateway",
+                "label": "API Gateway",
+                "side": "right",
+                "relationships": 5,
+                "sidePx": 72,
+                "neededPx": 88
+              }
+            ],
+            "detours": [
+              {
+                "relationship": {
+                  "id": "gateway-order",
+                  "from": "gateway",
+                  "to": "order",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "bends": 3,
+                "stretch": 1.105
+              },
+              {
+                "relationship": {
+                  "id": "user-db-write",
+                  "from": "user",
+                  "to": "user-db",
+                  "label": "",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "bends": 3,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "inventory-redis",
+                  "from": "inventory",
+                  "to": "redis",
+                  "label": "Redisson lock",
+                  "collectionIndex": 11,
+                  "artifactIndex": 12
+                },
+                "bends": 3,
+                "stretch": 1.233
+              },
+              {
+                "relationship": {
+                  "id": "user-kafka",
+                  "from": "user",
+                  "to": "kafka",
+                  "label": "outbox → user-events",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "bends": 3,
+                "stretch": 1.199
+              },
+              {
+                "relationship": {
+                  "id": "kafka-payment",
+                  "from": "kafka",
+                  "to": "payment",
+                  "label": "order-events",
+                  "collectionIndex": 14,
+                  "artifactIndex": 15
+                },
+                "bends": 4,
+                "stretch": 1.271
+              },
+              {
+                "relationship": {
+                  "id": "payment-kafka",
+                  "from": "payment",
+                  "to": "kafka",
+                  "label": "payment-events",
+                  "collectionIndex": 16,
+                  "artifactIndex": 17
+                },
+                "bends": 4,
+                "stretch": 2.574
+              },
+              {
+                "relationship": {
+                  "id": "kafka-order",
+                  "from": "kafka",
+                  "to": "order",
+                  "label": "payment-events",
+                  "collectionIndex": 17,
+                  "artifactIndex": 18
+                },
+                "bends": 3,
+                "stretch": 1
+              }
+            ]
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 50,
+            "emptyTopRatio": 0.077,
+            "occupiedTop": 50,
+            "viewBoxTop": 0,
+            "canvasHeight": 652,
+            "typicalNodeHeight": 72,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "recognized-declared-wide",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 1346,
+            "actualBudgetPx": 1346,
+            "actualReaderWidth": 1376,
+            "desiredReaderWidth": 1640,
+            "viewportCap": 1376,
+            "limit": "viewport-cap",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": false,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "order-db"
+            },
+            "minimumSourceTextPx": 7.3,
+            "minimumProjectedTextPx": 6.102981366459627,
+            "semanticTextCount": 47
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "cfafb142-ea80-40cf-9d8a-ef9d89635924"
+      }
+    },
+    "browser-check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 883,
+      "command": [
+        "/opt/homebrew/Cellar/node/26.12.1/bin/node",
+        "/Users/md.ashikurrahmanpuspo/.agents/skills/archify/bin/archify.mjs",
+        "browser-check",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+        "--json",
+        "--require-provenance",
+        "--out-dir",
+        "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/review-3"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "pass",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "cfafb142-ea80-40cf-9d8a-ef9d89635924",
+        "artifact": {
+          "path": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+          "sha256": "b1048be25a947db15d6c92a16040e4dfbc8e9eb752323389660a22737ae19d1c",
+          "bytes": 798142
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        },
+        "diagnostics": [],
+        "containment": {
+          "status": "pass",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1376,
+              "diagramWidth": 1346,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 78,
+                "diagramChromePx": 78,
+                "svgPx": 545,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 6.102981366459627,
+              "minimumProjectedNonEdgeTextPx": 6.102981366459627,
+              "minimumProjectedEdgeTextPx": 6.688198757763975,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1536,
+              "diagramWidth": 1506,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 610,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 6.828447204968944,
+              "minimumProjectedNonEdgeTextPx": 6.828447204968944,
+              "minimumProjectedEdgeTextPx": 7.483229813664596,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1856,
+              "diagramWidth": 1826,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 739,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 7.3,
+              "minimumProjectedNonEdgeTextPx": 7.3,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 94,
+                "diagramChromePx": 94,
+                "svgPx": 757,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 7.3,
+              "minimumProjectedNonEdgeTextPx": 7.3,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "themeStates": {
+          "status": "pass",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1440,
+              "height": 900,
+              "requestedTheme": "dark",
+              "resolvedTheme": "dark",
+              "ok": true
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "requestedTheme": "dark",
+              "resolvedTheme": "dark",
+              "ok": true
+            }
+          ]
+        },
+        "readability": {
+          "status": "pass",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1376,
+              "diagramWidth": 1346,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 78,
+                "diagramChromePx": 78,
+                "svgPx": 545,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 6.102981366459627,
+              "minimumProjectedNonEdgeTextPx": 6.102981366459627,
+              "minimumProjectedEdgeTextPx": 6.688198757763975,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1536,
+              "diagramWidth": 1506,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 610,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 6.828447204968944,
+              "minimumProjectedNonEdgeTextPx": 6.828447204968944,
+              "minimumProjectedEdgeTextPx": 7.483229813664596,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1856,
+              "diagramWidth": 1826,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 739,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 7.3,
+              "minimumProjectedNonEdgeTextPx": 7.3,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 94,
+                "diagramChromePx": 94,
+                "svgPx": 757,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 7.3,
+              "minimumProjectedNonEdgeTextPx": 7.3,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "viewerChrome": {
+          "status": "pass",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1376,
+              "diagramWidth": 1346,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 78,
+                "diagramChromePx": 78,
+                "svgPx": 545,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 6.102981366459627,
+              "minimumProjectedNonEdgeTextPx": 6.102981366459627,
+              "minimumProjectedEdgeTextPx": 6.688198757763975,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1536,
+              "diagramWidth": 1506,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 610,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 6.828447204968944,
+              "minimumProjectedNonEdgeTextPx": 6.828447204968944,
+              "minimumProjectedEdgeTextPx": 7.483229813664596,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1856,
+              "diagramWidth": 1826,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 739,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 7.3,
+              "minimumProjectedNonEdgeTextPx": 7.3,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 94,
+                "diagramChromePx": 94,
+                "svgPx": 757,
+                "cardsPx": 0,
+                "viewBoxHeight": 652
+              },
+              "viewBoxWidth": 1610,
+              "minimumProjectedNodeTextPx": 7.3,
+              "minimumProjectedNonEdgeTextPx": 7.3,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "entity/repository present; runtime config absent",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "order-db"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "directory": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/review-3",
+          "receipt": "e-commerce-architecture.browser-check.json",
+          "files": []
+        }
+      }
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "receipt": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/review-3/e-commerce-architecture.finalize.json",
+    "summaryReceipt": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/review-3/e-commerce-architecture.finalize-summary.json",
+    "browserCheckReceipt": "/Users/md.ashikurrahmanpuspo/Desktop/e-commerce/.archify/architecture-e-commerce-20261026-0436/review-3/e-commerce-architecture.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "finishedAt": "2026-10-25T23:01:01.037Z",
+  "durationMs": 2104,
+  "update": {
+    "status": "update_available",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.2.0",
+    "releaseNotes": "https://github.com/tt-a1i/archify/releases/tag/v3.2.0",
+    "severity": "normal",
+    "checkedAt": "2026-10-25T22:57:07.297Z",
+    "source": "cache",
+    "noticeRequired": true,
+    "noticeText": "Archify update: 3.0.1 → 3.2.0. A previous check at 2026-10-25T22:57:07.297Z found a newer release. Release notes: https://github.com/tt-a1i/archify/releases/tag/v3.2.0. The installed Skill has not changed; ask to snooze or ignore this reminder.",
+    "eventKey": "archify@sha256:70e210265c59f24dcbdf2a502ff671104b5454e7ee7d3554aecd86bad32384f5"
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "E-Commerce Microservices — Current Repository Architecture",
+    "subtitle": "Implemented code paths, event contracts, persistence boundaries, and incomplete runtime wiring",
+    "output": ".archify/architecture-e-commerce-20261026-0436/e-commerce-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/pacman-cli/e-commerce.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "459977c9dc9d10a02742a2ef0e9ad181ef6c1981"
+    },
+    "views": [
+      {
+        "id": "request-path",
+        "label": "Request path",
+        "focus": ["frontend", "gateway", "user", "product", "order", "payment", "inventory"],
+        "note": "Shows browser-to-API intent and the service endpoints present in source."
+      },
+      {
+        "id": "event-path",
+        "label": "Kafka events",
+        "focus": ["user", "order", "payment", "kafka", "notification"],
+        "note": "Shows the outbox publishers and listeners currently implemented."
+      },
+      {
+        "id": "persistence",
+        "label": "Persistence",
+        "focus": ["user", "product", "order", "payment", "inventory", "user-db", "product-db", "order-db", "payment-db", "inventory-db", "redis"],
+        "note": "Highlights database-per-service intent, cache/lock usage, and missing runtime configuration."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "frontend",
+      "type": "frontend",
+      "label": "Next.js Frontend",
+      "sublabel": "React 19 / App Router / :3000",
+      "tag": "localStorage JWT + token cookie",
+      "pos": [40, 300],
+      "size": [170, 72],
+      "sources": [
+        { "path": "frontend/src/app/page.tsx", "line": 20, "end_line": 117, "label": "landing shell" },
+        { "path": "frontend/src/lib/axios.ts", "line": 4, "end_line": 35, "label": "API client" },
+        { "path": "frontend/src/hooks/use-auth.ts", "line": 13, "end_line": 46, "label": "auth state" }
+      ]
+    },
+    {
+      "id": "gateway",
+      "type": "cloud",
+      "label": "API Gateway",
+      "sublabel": "Spring Cloud Gateway / intended :8080",
+      "tag": "JWT, rate limit, headers, validation",
+      "pos": [280, 300],
+      "size": [190, 72],
+      "sources": [
+        { "path": "api-gateway/src/main/java/com/ecommerce/gateway/filter/JwtAuthenticationFilter.java", "line": 19, "end_line": 52, "label": "JWT filter" },
+        { "path": "api-gateway/src/main/java/com/ecommerce/gateway/config/SecurityConfig.java", "line": 41, "end_line": 71, "label": "gateway filters" },
+        { "path": "README.md", "line": 15, "end_line": 24, "label": "documented intent" }
+      ]
+    },
+    {
+      "id": "user",
+      "type": "backend",
+      "label": "User Service",
+      "sublabel": "Auth, profile, outbox / :8081",
+      "tag": "JWT issuer",
+      "pos": [560, 120],
+      "size": [180, 72],
+      "sources": [
+        { "path": "user-service/src/main/java/com/ecommerce/user/controller/UserController.java", "line": 14, "end_line": 48, "label": "REST API" },
+        { "path": "user-service/src/main/java/com/ecommerce/user/service/impl/UserServiceImpl.java", "line": 37, "end_line": 82, "label": "registration + JWT" },
+        { "path": "user-service/src/main/java/com/ecommerce/user/outbox/OutboxPoller.java", "line": 42, "end_line": 119, "label": "outbox publisher" }
+      ]
+    },
+    {
+      "id": "product",
+      "type": "backend",
+      "label": "Product Service",
+      "sublabel": "Catalog, categories, stock field / :8085",
+      "pos": [560, 300],
+      "size": [200, 72],
+      "sources": [
+        { "path": "product-service/src/main/java/com/ecommerce/product/controller/ProductController.java", "line": 17, "end_line": 67, "label": "REST API" },
+        { "path": "product-service/src/main/java/com/ecommerce/product/service/impl/ProductServiceImpl.java", "line": 27, "end_line": 87, "label": "catalog service" },
+        { "path": "product-service/src/main/resources/application.yml", "line": 1, "end_line": 21, "label": "JPA config" }
+      ]
+    },
+    {
+      "id": "order",
+      "type": "backend",
+      "label": "Order Service",
+      "sublabel": "Orders, outbox, async processing",
+      "tag": "Saga code exists but is not wired into checkout",
+      "pos": [800, 300],
+      "size": [220, 78],
+      "sources": [
+        { "path": "order-service/src/main/java/com/ecommerce/order/controller/OrderController.java", "line": 17, "end_line": 57, "label": "REST API" },
+        { "path": "order-service/src/main/java/com/ecommerce/order/service/impl/OrderServiceImpl.java", "line": 50, "end_line": 121, "label": "order + outbox" },
+        { "path": "order-service/src/main/java/com/ecommerce/order/saga/SagaOrchestrator.java", "line": 31, "end_line": 82, "label": "separate saga helper" }
+      ]
+    },
+    {
+      "id": "inventory",
+      "type": "backend",
+      "label": "Inventory Service",
+      "sublabel": "Stock reserve/release/deduct / :8086",
+      "tag": "Redis distributed lock",
+      "pos": [800, 470],
+      "size": [220, 72],
+      "sources": [
+        { "path": "inventory-service/src/main/java/com/ecommerce/inventory/controller/InventoryController.java", "line": 15, "end_line": 53, "label": "REST API" },
+        { "path": "inventory-service/src/main/java/com/ecommerce/inventory/service/impl/InventoryServiceImpl.java", "line": 55, "end_line": 165, "label": "locking + stock" },
+        { "path": "inventory-service/src/main/resources/application.yml", "line": 23, "end_line": 26, "label": "Redis config" }
+      ]
+    },
+    {
+      "id": "payment",
+      "type": "backend",
+      "label": "Payment Service",
+      "sublabel": "Payment persistence + simulated processor",
+      "tag": "90% success simulation; no Stripe code",
+      "pos": [1060, 300],
+      "size": [220, 78],
+      "sources": [
+        { "path": "payment-service/src/main/java/com/ecommerce/payment/service/OrderEventListener.java", "line": 13, "end_line": 29, "label": "order listener" },
+        { "path": "payment-service/src/main/java/com/ecommerce/payment/service/impl/PaymentServiceImpl.java", "line": 25, "end_line": 73, "label": "payment flow" },
+        { "path": "payment-service/src/main/java/com/ecommerce/payment/idempotency/IdempotencyService.java", "line": 19, "end_line": 115, "label": "unused helper" }
+      ]
+    },
+    {
+      "id": "notification",
+      "type": "backend",
+      "label": "Notification Service",
+      "sublabel": "Kafka listeners + email adapter",
+      "tag": "currently logs; does not send SMTP",
+      "pos": [1320, 300],
+      "size": [220, 78],
+      "sources": [
+        { "path": "notification-service/src/main/java/com/ecommerce/notification/service/NotificationEventListener.java", "line": 14, "end_line": 54, "label": "event listeners" },
+        { "path": "notification-service/src/main/java/com/ecommerce/notification/service/impl/EmailServiceImpl.java", "line": 11, "end_line": 33, "label": "email implementation" },
+        { "path": "notification-service/src/main/java/com/ecommerce/notification/NotificationServiceApplication.java", "line": 5, "end_line": 13, "label": "Kafka app" }
+      ]
+    },
+    {
+      "id": "kafka",
+      "type": "messagebus",
+      "label": "Apache Kafka",
+      "sublabel": "user-events / order-events / payment-events",
+      "tag": "event contracts are inconsistent",
+      "pos": [1060, 120],
+      "size": [240, 72],
+      "sources": [
+        { "path": "shared-lib/src/main/java/com/ecommerce/shared/config/KafkaTopicConfig.java", "line": 8, "end_line": 46, "label": "topic declarations" },
+        { "path": "order-service/src/main/java/com/ecommerce/order/outbox/OutboxPoller.java", "line": 81, "end_line": 129, "label": "string payload publisher" },
+        { "path": "notification-service/src/main/java/com/ecommerce/notification/service/NotificationEventListener.java", "line": 18, "end_line": 36, "label": "typed consumers" }
+      ]
+    },
+    {
+      "id": "user-db",
+      "type": "database",
+      "label": "User PostgreSQL",
+      "sublabel": "user_db / :5433 local default",
+      "pos": [380, 210],
+      "size": [180, 60],
+      "sources": [
+        { "path": "user-service/src/main/resources/application.properties", "line": 12, "end_line": 27, "label": "datasource + JPA" },
+        { "path": "user-service/src/main/java/com/ecommerce/user/repository/UserRepository.java", "line": 1, "end_line": 14, "label": "repository" }
+      ]
+    },
+    {
+      "id": "product-db",
+      "type": "database",
+      "label": "Product PostgreSQL",
+      "sublabel": "product_db / :5436 local default",
+      "pos": [560, 420],
+      "size": [190, 60],
+      "sources": [
+        { "path": "product-service/src/main/resources/application.yml", "line": 8, "end_line": 21, "label": "datasource + JPA" },
+        { "path": "product-service/src/main/java/com/ecommerce/product/repository/ProductRepository.java", "line": 1, "end_line": 15, "label": "repository" }
+      ]
+    },
+    {
+      "id": "inventory-db",
+      "type": "database",
+      "label": "Inventory PostgreSQL",
+      "sublabel": "inventory_db / :5437 local default",
+      "pos": [1030, 500],
+      "size": [200, 60],
+      "sources": [
+        { "path": "inventory-service/src/main/resources/application.yml", "line": 8, "end_line": 21, "label": "datasource + JPA" },
+        { "path": "inventory-service/src/main/java/com/ecommerce/inventory/repository/InventoryRepository.java", "line": 1, "end_line": 13, "label": "repository" }
+      ]
+    },
+    {
+      "id": "order-db",
+      "type": "database",
+      "label": "Order PostgreSQL",
+      "sublabel": "entity/repository present; runtime config absent",
+      "pos": [800, 80],
+      "size": [220, 60],
+      "sources": [
+        { "path": "order-service/src/main/java/com/ecommerce/order/entity/Order.java", "line": 1, "end_line": 67, "label": "order entity" },
+        { "path": "order-service/src/main/java/com/ecommerce/order/repository/OrderRepository.java", "line": 1, "end_line": 19, "label": "repository" }
+      ]
+    },
+    {
+      "id": "payment-db",
+      "type": "database",
+      "label": "Payment PostgreSQL",
+      "sublabel": "entity/repository present; runtime config absent",
+      "pos": [1060, 420],
+      "size": [220, 60],
+      "sources": [
+        { "path": "payment-service/src/main/java/com/ecommerce/payment/entity/Payment.java", "line": 1, "end_line": 46, "label": "payment entity" },
+        { "path": "payment-service/src/main/java/com/ecommerce/payment/repository/PaymentRepository.java", "line": 1, "end_line": 13, "label": "repository" }
+      ]
+    },
+    {
+      "id": "redis",
+      "type": "database",
+      "label": "Redis",
+      "sublabel": "inventory locks; order cache config also exists",
+      "pos": [1320, 470],
+      "size": [220, 60],
+      "sources": [
+        { "path": "inventory-service/src/main/java/com/ecommerce/inventory/service/impl/InventoryServiceImpl.java", "line": 55, "end_line": 65, "label": "lock acquisition" },
+        { "path": "order-service/src/main/java/com/ecommerce/order/config/RedisCacheConfig.java", "line": 38, "end_line": 55, "label": "cache config" }
+      ]
+    }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Browser / HTTP edge", "wraps": ["frontend", "gateway"] },
+    { "kind": "region", "label": "Business services", "wraps": ["user", "product", "order", "inventory", "payment", "notification"] },
+    { "kind": "region", "label": "Messaging and persistence", "wraps": ["kafka", "user-db", "product-db", "inventory-db", "order-db", "payment-db", "redis"] }
+  ],
+  "connections": [
+    { "id": "frontend-gateway", "from": "frontend", "to": "gateway", "label": "REST /api/*", "variant": "emphasis" },
+    { "id": "gateway-user", "from": "gateway", "to": "user", "variant": "dashed" },
+    { "id": "gateway-product", "from": "gateway", "to": "product", "variant": "dashed" },
+    { "id": "gateway-order", "from": "gateway", "to": "order", "variant": "dashed" },
+    { "id": "gateway-inventory", "from": "gateway", "to": "inventory", "variant": "dashed" },
+    { "id": "gateway-jwt", "from": "gateway", "to": "user", "label": "validate Bearer JWT; inject X-User-*", "variant": "security" },
+    { "id": "user-db-write", "from": "user", "to": "user-db" },
+    { "id": "product-db-write", "from": "product", "to": "product-db", "label": "JPA catalog persistence", "labelDy": 24 },
+    { "id": "inventory-db-write", "from": "inventory", "to": "inventory-db", "label": "JPA stock persistence" },
+    { "id": "order-db-write", "from": "order", "to": "order-db", "label": "JPA order + outbox" },
+    { "id": "payment-db-write", "from": "payment", "to": "payment-db", "label": "JPA payment persistence" },
+    { "id": "inventory-redis", "from": "inventory", "to": "redis", "label": "Redisson lock" },
+    { "id": "user-kafka", "from": "user", "to": "kafka", "label": "outbox → user-events", "variant": "dashed", "labelDy": 90 },
+    { "id": "order-kafka", "from": "order", "to": "kafka", "label": "outbox → order-events", "variant": "dashed" },
+    { "id": "kafka-payment", "from": "kafka", "to": "payment", "label": "order-events", "variant": "dashed" },
+    { "id": "kafka-notification", "from": "kafka", "to": "notification", "label": "typed listeners", "variant": "dashed" },
+    { "id": "payment-kafka", "from": "payment", "to": "kafka", "label": "payment-events", "variant": "dashed" },
+    { "id": "kafka-order", "from": "kafka", "to": "order", "label": "payment-events", "variant": "dashed" },
+    { "id": "order-inventory-missing", "from": "order", "to": "inventory", "label": "missing checkout integration", "variant": "security" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "What is implemented", "items": ["Next.js auth and order UI calls the configured API base URL", "User service issues JWTs and writes UserCreated outbox records", "Product and inventory services expose CRUD/stock endpoints", "Order and payment services persist local state and publish/listen to Kafka topics"] },
+    { "dot": "amber", "title": "Highest-risk gaps", "items": ["No root pom.xml, several module poms, docker-compose.yml, or .env.example are tracked", "Gateway has no tracked route configuration, so the documented :8080 topology cannot be started from this checkout", "Outbox publishes String payloads while consumers expect typed event objects", "Order creation never calls inventory; the SagaOrchestrator is a separate in-memory helper"] },
+    { "dot": "rose", "title": "Runtime truth", "items": ["Notification email implementation only logs; SMTP is not wired", "Payment processing is random simulation, not Stripe", "Frontend middleware reads a cookie while API auth reads localStorage; logout/login flows can drift", "The current frontend build passes, but lint reports 18 errors and 3 warnings"] }
+  ]
+}
